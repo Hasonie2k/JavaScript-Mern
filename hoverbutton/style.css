@@ -1,0 +1,25 @@
+@property --r {
+	syntax: '<length-percentage>';
+	initial-value: 0px;
+	inherits: false
+}
+
+html, body { display: grid }
+html { height: 100% }
+
+button {
+	place-self: center;
+	border: solid 2px #0001;
+	padding: 0 1em;
+	border-radius: 2em;
+	box-shadow: inset 1px 3px 1px #fff4;
+	background: 
+		radial-gradient(circle at var(--x, 0%) var(--y, 0%), 
+				black calc(var(--r) - 1px), rgb(255, 196, 0) var(--r)) 
+			border-box;
+	color: white;
+	font: 1.5em/ 2.25 ubuntu;
+	transition: --r .35s;
+	
+	&:hover { --r: 100% }
+}
